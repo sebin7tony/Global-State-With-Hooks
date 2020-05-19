@@ -1,25 +1,22 @@
 import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import {StoreProvider} from './store/useStore'
+import Login from './components/Login'
+import UserInfo from './components/UserInfo'
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <StoreProvider>
+      <div className="jumbotron jumbotron-fluid">
+        <div className="container">
+          <h1 className="display-2">Global store with React hooks</h1>
+          <p className="lead">This example demonstrate global state implemented in react hooks using useContext & useReducer</p>
+        </div>
+      </div>
+      <div className="row">
+        <Login />
+        <UserInfo />
+      </div>
+    </StoreProvider>
   );
 }
 
